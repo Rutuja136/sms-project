@@ -1,12 +1,43 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
-const PublicLayout = () => {
+export default function PublicLayout() {
   return (
-    <>
-      <h2>Public Layout</h2>
-      <Outlet />
-    </>
-  );
-};
+    <div>
+      {/* Navbar */}
+      <nav style={style.navbar}>
+        <h2>My App</h2>
 
-export default PublicLayout;
+        <div style={style.links}>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/courses">Courses</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/auth/login">Login</Link>
+        </div>
+      </nav>
+
+      {/* Page Content */}
+      <div style={style.container}>
+        <Outlet />
+      </div>
+    </div>
+  );
+}
+
+const style = {
+  navbar: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 15,
+    background: "#111",
+    color: "white",
+  },
+  links: {
+    display: "flex",
+    gap: 15,
+  },
+  container: {
+    padding: 20,
+  },
+};

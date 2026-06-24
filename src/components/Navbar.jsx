@@ -67,6 +67,18 @@ const Navbar = () => {
               <NavLink to="/admin/settings">Settings</NavLink>
             </div>
           </li>
+          <li className="dropdown">
+  <span>Layouts ▾</span>
+
+  <div className="dropdown-content">
+    <NavLink to="/public-layout">Public Layout</NavLink>
+    <NavLink to="/auth-layout">Auth Layout</NavLink>
+    <NavLink to="/student-layout">Student Layout</NavLink>
+    <NavLink to="/teacher-layout">Teacher Layout</NavLink>
+    <NavLink to="/admin-layout">Admin Layout</NavLink>
+    <NavLink to="/dashboard-layout">Dashboard Layout</NavLink>
+  </div>
+</li>
 
         </ul>
       </nav>

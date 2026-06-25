@@ -5,6 +5,7 @@ import AuthRoutes from "./AuthRoutes";
 import StudentRoutes from "./StudentRoutes";
 import TeacherRoutes from "./TeacherRoutes";
 import AdminRoutes from "./AdminRoutes";
+import LayoutRoutes from "./LayoutRoutes";
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
       {StudentRoutes()}
       {TeacherRoutes()}
       {AdminRoutes()}
+      {LayoutRoutes()}
     </Routes>
   );
 };

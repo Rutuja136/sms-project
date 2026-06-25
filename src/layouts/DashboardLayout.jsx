@@ -1,4 +1,3 @@
- feature-public-pages
 import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
@@ -20,7 +19,6 @@ const DashboardLayout = () => {
         }}
       >
         <h2>Smart Scholar Dashboard</h2>
-
         <div>Welcome User</div>
       </header>
 
@@ -34,10 +32,6 @@ const DashboardLayout = () => {
       </main>
     </div>
   );
-
-const DashboardLayout = () => {
-  return <h1>Dashboard Layout Page</h1>;
- main
 };
 
 export default DashboardLayout;

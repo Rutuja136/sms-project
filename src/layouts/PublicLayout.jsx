@@ -2,42 +2,24 @@ import { Outlet, Link } from "react-router-dom";
 
 export default function PublicLayout() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
-      <nav style={style.navbar}>
-        <h2>My App</h2>
+      <nav className="bg-gray-900 text-white px-6 py-4 flex justify-between items-center">
+        <h2 className="text-2xl font-bold">My App</h2>
 
-        <div style={style.links}>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/courses">Courses</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/auth/login">Login</Link>
+        <div className="flex gap-6">
+          <Link to="/" className="hover:text-blue-400">Home</Link>
+          <Link to="/about" className="hover:text-blue-400">About</Link>
+          <Link to="/courses" className="hover:text-blue-400">Courses</Link>
+          <Link to="/contact" className="hover:text-blue-400">Contact</Link>
+          <Link to="/auth/login" className="hover:text-blue-400">Login</Link>
         </div>
       </nav>
 
       {/* Page Content */}
-      <div style={style.container}>
+      <div className="p-5">
         <Outlet />
       </div>
     </div>
   );
 }
-
-const style = {
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 15,
-    background: "#111",
-    color: "white",
-  },
-  links: {
-    display: "flex",
-    gap: 15,
-  },
-  container: {
-    padding: 20,
-  },
-};

@@ -31,65 +31,48 @@ export default function ResetPassword() {
   };
 
   return (
-    <div style={style.container}>
-      <h2>Reset Password</h2>
-
-      <form onSubmit={handleSubmit} style={style.form}>
-        <input
-          type="password"
-          name="password"
-          placeholder="New Password"
-          value={form.password}
-          onChange={handleChange}
-          style={style.input}
-        />
-
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          value={form.confirmPassword}
-          onChange={handleChange}
-          style={style.input}
-        />
-
-        <button type="submit" style={style.button}>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="w-full max-w-md p-8 bg-white rounded-xl shadow-lg">
+        <h2 className="text-3xl font-bold text-center mb-6">
           Reset Password
-        </button>
-      </form>
+        </h2>
 
-      <div style={{ marginTop: 10 }}>
-        <Link to="/auth/login">Back to Login</Link>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            type="password"
+            name="password"
+            placeholder="New Password"
+            value={form.password}
+            onChange={handleChange}
+            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+
+          <button
+            type="submit"
+            className="p-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
+          >
+            Reset Password
+          </button>
+        </form>
+
+        <div className="mt-4 text-center">
+          <Link
+            to="/auth/login"
+            className="text-red-600 hover:underline"
+          >
+            Back to Login
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
-
-const style = {
-  container: {
-    padding: 30,
-    maxWidth: 350,
-    margin: "50px auto",
-    textAlign: "center",
-    border: "1px solid #ddd",
-    borderRadius: 10,
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 10,
-  },
-  input: {
-    padding: 10,
-    borderRadius: 5,
-    border: "1px solid #ccc",
-  },
-  button: {
-    padding: 10,
-    background: "red",
-    color: "white",
-    border: "none",
-    borderRadius: 5,
-    cursor: "pointer",
-  },
-};

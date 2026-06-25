@@ -19,55 +19,38 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div style={style.container}>
-      <h2>Forgot Password</h2>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="w-full max-w-md p-8 bg-white rounded-xl shadow-lg">
+        <h2 className="text-3xl font-bold text-center mb-6">
+          Forgot Password
+        </h2>
 
-      <form onSubmit={handleSubmit} style={style.form}>
-        <input
-          type="email"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={style.input}
-        />
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            type="email"
+            placeholder="Enter Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
 
-        <button type="submit" style={style.button}>
-          Send Reset Link
-        </button>
-      </form>
+          <button
+            type="submit"
+            className="p-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
+          >
+            Send Reset Link
+          </button>
+        </form>
 
-      <div style={{ marginTop: 10 }}>
-        <Link to="/auth/login">Back to Login</Link>
+        <div className="mt-4 text-center">
+          <Link
+            to="/auth/login"
+            className="text-orange-600 hover:underline"
+          >
+            Back to Login
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
-
-const style = {
-  container: {
-    padding: 30,
-    maxWidth: 350,
-    margin: "50px auto",
-    textAlign: "center",
-    border: "1px solid #ddd",
-    borderRadius: 10,
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 10,
-  },
-  input: {
-    padding: 10,
-    borderRadius: 5,
-    border: "1px solid #ccc",
-  },
-  button: {
-    padding: 10,
-    background: "orange",
-    color: "white",
-    border: "none",
-    borderRadius: 5,
-    cursor: "pointer",
-  },
-};

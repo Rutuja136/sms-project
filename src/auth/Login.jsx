@@ -2,91 +2,66 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
-  const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
+const [form, setForm] = useState({
+email: "",
+password: "",
+});
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+const handleChange = (e) => {
+setForm({ ...form, [e.target.name]: e.target.value });
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = (e) => {
+e.preventDefault();
 
-    if (form.email && form.password) {
-      alert("Login Successful");
-      navigate("/dashboard"); // make sure route exists
-    } else {
-      alert("Fill all fields");
-    }
-  };
-
-  return (
-    <div style={style.container}>
-      <h2>Login</h2>
-
-      <form onSubmit={handleSubmit} style={style.form}>
-        <input
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          style={style.input}
-        />
-
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          style={style.input}
-        />
-
-        <button type="submit" style={style.button}>
-          Login
-        </button>
-      </form>
-
-      <div style={{ marginTop: 10 }}>
-        <Link to="/auth/forgot-password">Forgot Password?</Link>
-      </div>
-
-      <div>
-        <Link to="/auth/register">Create Account</Link>
-      </div>
-    </div>
-  );
+if (form.email && form.password) {
+  alert("Login Successful");
+  navigate("/dashboard");
+} else {
+  alert("Fill all fields");
 }
 
-const style = {
-  container: {
-    padding: 30,
-    maxWidth: 320,
-    margin: "50px auto",
-    textAlign: "center",
-    border: "1px solid #ddd",
-    borderRadius: 10,
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 10,
-  },
-  input: {
-    padding: 10,
-    borderRadius: 5,
-    border: "1px solid #ccc",
-  },
-  button: {
-    padding: 10,
-    background: "black",
-    color: "white",
-    border: "none",
-    borderRadius: 5,
-    cursor: "pointer",
-  },
 };
+
+return (
+<div className="p-8 max-w-sm mx-auto mt-12 text-center border border-gray-300 rounded-lg">
+  <h2 className="text-3xl font-bold mb-4">Login</h2>
+
+  <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <input
+      name="email"
+      placeholder="Email"
+      value={form.email}
+      onChange={handleChange}
+      className="p-2 border border-gray-300 rounded"
+    />
+
+    <input
+      name="password"
+      type="password"
+      placeholder="Password"
+      value={form.password}
+      onChange={handleChange}
+      className="p-2 border border-gray-300 rounded"
+    />
+
+    <button
+      type="submit"
+      className="p-2 bg-black text-white rounded"
+    >
+      Login
+    </button>
+  </form>
+
+  <div className="mt-3">
+    <Link to="/auth/forgot-password">Forgot Password?</Link>
+  </div>
+
+  <div>
+    <Link to="/auth/register">Create Account</Link>
+  </div>
+</div>
+);
+}

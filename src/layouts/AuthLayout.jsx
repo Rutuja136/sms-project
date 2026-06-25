@@ -2,51 +2,39 @@ import { Outlet, Link } from "react-router-dom";
 
 export default function AuthLayout() {
   return (
-    <div style={style.wrapper}>
-      {/* Left side branding */}
-      <div style={style.left}>
-        <h1>Welcome 👋</h1>
-        <p>Login or Register to continue</p>
+    <div className="flex min-h-screen">
+
+      {/* Left Side */}
+      <div className="flex-1 bg-gray-900 text-white flex flex-col justify-center items-center">
+        <h1 className="text-4xl font-bold mb-4">
+          Welcome 👋
+        </h1>
+
+        <p className="text-lg text-gray-300">
+          Login or Register to continue
+        </p>
       </div>
 
-      {/* Right side auth pages */}
-      <div style={style.right}>
+      {/* Right Side */}
+      <div className="flex-1 flex flex-col justify-center items-center p-8 bg-gray-100">
         <Outlet />
 
-        <div style={style.links}>
-          <Link to="/auth/login">Login</Link>
-          <Link to="/auth/register">Register</Link>
+        <div className="mt-6 flex gap-6">
+          <Link
+            to="/auth/login"
+            className="text-blue-600 hover:underline"
+          >
+            Login
+          </Link>
+
+          <Link
+            to="/auth/register"
+            className="text-green-600 hover:underline"
+          >
+            Register
+          </Link>
         </div>
       </div>
     </div>
   );
 }
-
-const style = {
-  wrapper: {
-    display: "flex",
-    height: "100vh",
-  },
-  left: {
-    flex: 1,
-    background: "#111",
-    color: "white",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  right: {
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-  },
-  links: {
-    marginTop: 20,
-    display: "flex",
-    gap: 15,
-  },
-};

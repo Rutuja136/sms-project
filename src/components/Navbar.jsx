@@ -67,6 +67,7 @@ const Navbar = () => {
               <NavLink to="/admin/settings">Settings</NavLink>
             </div>
           </li>
+          
 
         </ul>
       </nav>

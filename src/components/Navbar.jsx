@@ -67,6 +67,9 @@ const Navbar = () => {
               <NavLink to="/admin/settings">Settings</NavLink>
             </div>
           </li>
+ feature-public-pages
+          
+
           <li className="dropdown">
   <span>Layouts ▾</span>
 
@@ -79,6 +82,7 @@ const Navbar = () => {
     <NavLink to="/dashboard-layout">Dashboard Layout</NavLink>
   </div>
 </li>
+ main
 
         </ul>
       </nav>

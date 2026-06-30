@@ -158,7 +158,7 @@ const Navbar = () => {
           display: none;
           position: absolute;
 
-          top: 40px;
+          top: 100%;
           left: 0;
 
           background: #111827;
